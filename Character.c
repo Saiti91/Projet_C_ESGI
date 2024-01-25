@@ -18,8 +18,8 @@ Character createSamurai() {
             FIRE,      // Faiblesse
             BLESSING,     // Faiblesse critique
             CURSE,     // Invincibilité
-            PHYSICAL   // Résistance
-   };
+            PHYSICAL,   // Résistance
+            "../char_images/samurai.png"};
     return samurai;
 }
 
@@ -35,8 +35,8 @@ Character createMainCharacter() {
             ELECTRICITY, // Faiblesse
             BLESSING,       // Faiblesse critique
             CURSE,       // Invincibilité
-            AIR          // Résistance
-    };
+            AIR,          // Résistance
+    "../char_images/joker.png"};
     return mainCharacter;
 }
 
@@ -53,8 +53,8 @@ Character createMonk() {
             AIR,       // Faiblesse
             CURSE,     // Faiblesse critique
             BLESSING,  // Invincibilité
-            ELECTRICITY// Résistance
-    };
+            ELECTRICITY,// Résistance
+            "../char_images/monk.png"};
     return monk;
 }
 
@@ -71,8 +71,8 @@ Character createMedic() {
             FIRE,      // Faiblesse
             CURSE,     // Faiblesse critique
             BLESSING,  // Invincibilité
-            WATER      // Résistance
-    };
+            WATER,      // Résistance
+            "../char_images/samurai.png"};
     return medic;
 }
 
@@ -89,8 +89,8 @@ Character createAssassin() {
             BLESSING,  // Faiblesse
             AIR,       // Faiblesse critique
             CURSE,     // Invincibilité
-            WATER      // Résistance
-    };
+            WATER,// Résistance
+            "../char_images/assassin.png"};
     return assassin;
 }
 
@@ -109,12 +109,10 @@ Character createDemon() {
             WATER,     // Faiblesse critique
             BLESSING,  // Invincibilité
             AIR,// Résistance
-            "../char_images/"
+            "../char_images/samurai.png"
     };
     return demon;
 }
-
-
 
 void showCharacterStats(SDL_Renderer* renderer, Character character) {
     // Affichage des stats dans la console pour l'instant

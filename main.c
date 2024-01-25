@@ -10,7 +10,7 @@
 typedef enum {
     INTRO_SCREEN,
     DUNGEON_SELECTION_SCREEN,
-    PARTY_STATS_SCREEN,
+    PARTY_SELECTION_SCREEN,
     COMBAT_SCREEN,
     // Autres écrans
 } GameState;
@@ -152,7 +152,14 @@ int main() {
                             selectedDungeonIndex = (selectedDungeonIndex + 1) % totalDungeons;
                         } else if (e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
                             dungeonSelected = true; // Simule la sélection du donjon
-                            currentState = PARTY_STATS_SCREEN;
+                            currentState = PARTY_SELECTION_SCREEN;
+                        }
+                        break;
+                    case PARTY_SELECTION_SCREEN:
+                        // Ici, gérez la sélection des membres de la party
+                        if (e.key.keysym.sym == SDLK_RETURN) {
+                            // Simulez la sélection des membres de la party
+                            currentState = COMBAT_SCREEN;
                         }
                         break;
                         // Autres cas...
@@ -184,10 +191,16 @@ int main() {
                 SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
                 SDL_DestroyTexture(textTexture);
 
-                // Afficher l'image du donjon sous le nom
-                SDL_Rect dungeonImageRect = { (SCREEN_WIDTH - 600) / 2, 100, 600, 450 }; // Vous pouvez ajuster ces valeurs
+                // Affichage de l'image du donjon sous le nom
+                SDL_Rect dungeonImageRect = { (SCREEN_WIDTH - 600) / 2, 100, 600, 450 }; // valeurs ajustables
                 SDL_RenderCopy(renderer, dungeonTextures[selectedDungeonIndex], NULL, &dungeonImageRect);
 
+                break;
+            case PARTY_SELECTION_SCREEN:
+                // Affichez le nom du donjon sélectionné en haut
+                // Affichez la liste des personnages et leurs stats
+                // Affichez les boutons de sélection pour chaque personnage
+                // Affichez un bouton pour valider la sélection
                 break;
                 // Autres cas...
         }

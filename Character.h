@@ -21,6 +21,10 @@ typedef struct {
 
 Character createSamurai();
 Character createMainCharacter();
+Character createMonk();
+Character createMedic();
+Character createAssassin();
+Character createDemon();
 
 void showCharacterStats(SDL_Renderer* renderer, Character character);
 
